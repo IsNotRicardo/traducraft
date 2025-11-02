@@ -1,0 +1,16 @@
+{
+    "name": "traducraft",
+    "version": "0.0.1",
+    "description": "A Minecraft bot that translates text sent by players on chat.",
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "mineflayer": "^4.0.0"
+    }
+}
