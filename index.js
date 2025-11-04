@@ -2,6 +2,14 @@ require('dotenv').config();
 
 const mineflayer = require('mineflayer');
 
+const auth = (() => {
+    if (process.env.SERVER_AUTH) {
+        return process.env.SERVER_AUTH;
+    }
+    console.warn("⚠️ Missing server auth environment variable. Defaulting to 'online'")
+    return 'online'
+})();
+
 const host = (() => {
     if (process.env.SERVER_HOST) {
         return process.env.SERVER_HOST;
@@ -30,14 +38,6 @@ const username = (() => {
     return 'Traducraft'
 })();
 
-const auth = (() => {
-    if (process.env.SERVER_AUTH) {
-        return process.env.SERVER_AUTH;
-    }
-    console.warn("⚠️ Missing server auth environment variable. Defaulting to 'online'")
-    return 'online'
-})();
-
 const version = (() => {
     if (process.env.SERVER_VERSION) {
         return process.env.SERVER_VERSION;
@@ -47,9 +47,9 @@ const version = (() => {
 })();
 
 const bot = mineflayer.createBot({
+    auth: auth,
     host: host,
     port: port,
     username: username,
-    auth: auth,
     version: version
 })
