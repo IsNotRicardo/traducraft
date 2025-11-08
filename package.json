@@ -1,6 +1,6 @@
 {
     "name": "traducraft",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "A Minecraft bot that translates text sent by players on chat.",
     "license": "ISC",
     "author": "",
